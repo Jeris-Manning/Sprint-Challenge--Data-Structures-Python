@@ -13,8 +13,7 @@ class BinarySearchTree:
 
     # Insert the given value into the tree
     def insert(self, value):
-        if self.value == '':
-            BinarySearchTree(value)
+
         # Root node will always have value as it is part of constructor
         # If the value of node being added is less than its parent,
         # we go left.

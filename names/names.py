@@ -1,25 +1,21 @@
-from binary_search_tree import BinarySearchTree
 import time
-
+from binary_search_tree import BinarySearchTree
 start_time = time.time()
-
-# f = open('names_1.txt', 'r')
-# names_1 = f.read().split("\n")  # List containing 10000 names
-# f.close()
-
-name_tree = BinarySearchTree(None)
-
-# f = open('names_1.txt', 'r')
-# for line in f:
-#     name_tree.insert(line)
-# f.close()
+import sys
+sys.setrecursionlimit(10**6)
 
 
+f = open('names_1.txt', 'r')
+names_1 = f.read().split("\n")  # List containing 10000 names
+f.close()
+# print(names_1)
+f = open('names_2.txt', 'r')
+names_2 = f.read().split("\n")  # List containing 10000 names
+f.close()
 
-
-# f = open('names_2.txt', 'r')
-# names_2 = f.read().split("\n")  # List containing 10000 names
-# f.close()
+f = open('names_3.txt', 'r')
+names_3 = f.read().split("\n")  # List containing 10000 names
+f.close()
 
 duplicates = []  # Return the list of duplicates in this data structure
 
@@ -28,19 +24,10 @@ duplicates = []  # Return the list of duplicates in this data structure
 #     for name_2 in names_2:
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
+maple = BinarySearchTree("Mario Luigi")
 
-name_tree = BinarySearchTree(None)
-
-f = open('names_1.txt', 'r')
-for line in f:
-    name_tree.insert(line)
-f.close()
-
-f = open('names_2.txt', 'r')
-for line in f:
-    name_tree.insert(line)
-f.close()
-
+for name in names_3:
+    maple.insert(name)
 
 
 end_time = time.time()
