@@ -18,8 +18,8 @@ class RingBuffer:
             self.current = self.storage.head
             return
 
-        if self.current == None:
-            self.current = self.storage.head
+        # if self.current == None:
+        #     self.current = self.storage.head
         if self.current.next == None:
             self.current = self.storage.head
         else:

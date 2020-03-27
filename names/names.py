@@ -17,45 +17,24 @@ f.close()
 
 duplicates = []  # Return the list of duplicates in this data structure
 
-# Replace the nested for loops below with your improvements
-# for name_1 in names_1:
-#     for name_2 in names_2:     # This is runtime O(n^2)
-#         if name_1 == name_2:
-#             duplicates.append(name_1)
+# Used to be O(n^2)
+
+maple = BinarySearchTree("Jean Velazquez") # She was first in line, so she gets to be the root.
+
+for name in names_1: # Build a tree out of all the folks in list 1
+    maple.insert(name)
+
+for name in names_2: # Check for each of the list 2 folks in the tree.
+                     # If we spot 'em, they get appended to the duplicate list!
+    if maple.contains(name):
+        duplicates.append(name)
 
 
 
-# Rule Breaking solution that works
 
-
-# ----------------------------------
-
-# names1 = sorted(names_1)
-# names2 = sorted(names_2)
-# for i in range(0, len(names1)-1):
-#     if names1[i] == names1[i+1]:
-
-#         names1[i] = str(i*22)
-# for i in range(0, len(names2)-1):
-#     if names2[i] == names2[i+1]:
-
-#         names2[i] = str(i*3.157)
-# allname = sorted(names1 + names2)
-
-# for i in range(0, len(allname)-1):
-#     if allname[i] == allname[i+1]:
-#         duplicates.append(allname[i])
-
-
-
-# maple = BinarySearchTree("Mario Luigi")
-# for name in names_3:
-#     maple.insert(name)
-
-
-# end_time = time.time()
-# print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
-# print (f"runtime: {end_time - start_time} seconds")
+end_time = time.time()
+print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
+print (f"runtime: {end_time - start_time} seconds")
 
 # ---------- Stretch Goal -----------
 # Python has built-in tools that allow for a very efficient approach to this problem
@@ -67,6 +46,6 @@ dupes = (set(names_1) & set(names_2))
 for dupe in dupes:
     duplicates.append(dupe)
 
-end_time = time.time()
-print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
-print (f"runtime: {end_time - start_time} seconds")
+# end_time = time.time()
+# print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
+# print (f"runtime: {end_time - start_time} seconds")
